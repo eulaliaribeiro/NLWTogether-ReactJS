@@ -8,11 +8,14 @@ import GoogleIconImg from '../assets/images/google-icon.svg'
 //webpack: module bundler => pré configurações pra cada tipo de arquivo
 import { Button } from '../components/Button'
 import '../styles/auth.scss'
+/* import { useTheme } from '../hooks/useTheme'; */
 
 
 export function Home() {
   const history = useHistory()
   const { signInWithGoogle, user } = useAuth()
+  /* const { theme, toggleTheme } = useTheme() */
+
   const [roomCode, setRoomCode] = useState('')
 
   async function handleCreateRoom() {
@@ -44,7 +47,7 @@ export function Home() {
   }
 
   return (
-    <div id="page-auth">
+    <div id="page-auth" /* className={theme} */>
       <aside>
         <img src={IllustrationImg} alt="ilustração simbolizando perguntas e respostas" />
         <strong>Crie salas de Q&amp;A ao vivo</strong>
@@ -53,6 +56,8 @@ export function Home() {
 
       <main>
         <div className="main-content">
+          {/* <div>{theme}</div> */}
+          {/* <button onClick={toggleTheme}>Toggle</button> */}
           <img src={LogoImg} alt="Letmeask" />
           <button className="create-room" onClick={handleCreateRoom}>
             <img src={GoogleIconImg} alt="Logo do Google" />

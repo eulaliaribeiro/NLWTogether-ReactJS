@@ -5,6 +5,7 @@ import IllustrationImg from '../assets/images/illustration.svg'
 import LogoImg from '../assets/images/logo.svg'
 //webpack: module bundler => pré configurações pra cada tipo de arquivo
 import '../styles/auth.scss'
+/* import { useTheme } from '../hooks/useTheme'; */
 import { Button } from '../components/Button'
 import { database } from '../services/firebase'
 
@@ -12,6 +13,7 @@ export function NewRoom() {
   const { user } = useAuth()
   const history = useHistory()
   const [newRoom, setNewRoom] = useState('')
+  /* const { theme } = useTheme() */
 
   async function handleCreateRoom(event: FormEvent) {
     event.preventDefault()
@@ -33,7 +35,7 @@ export function NewRoom() {
   }
 
   return (
-    <div id="page-auth">
+    <div id="page-auth" /* className={theme} */>
       <aside>
         <img src={IllustrationImg} alt="ilustração simbolizando perguntas e respostas" />
         <strong>Crie salas de Q&amp;A ao vivo</strong>
